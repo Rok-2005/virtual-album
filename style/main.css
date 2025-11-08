@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -9,4 +13,49 @@ body {
     align-items: center;
 
 
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    height: 100%;
+    width: 100%;
+
+
+}
+
+.setlist-wraper {
+    grid-column: 1;
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.setlist {
+    height: auto;
+    width: auto;
+    min-width: 300px;
+    background-color: #00000091;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 40px 40px;
+    border-radius: 5px;
+
+
+}
+
+.song {
+    color: white;
+    font-size: 30px;
+    transform: rotateZ(0deg);
+}
+
+.song.active::after {
+    content: "<";
+    padding-left: 10px;
+    font-weight: 900;
+    font-size: 30px;
 }
