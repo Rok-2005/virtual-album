@@ -1,3 +1,5 @@
+let IS_PLAYING = false // Globalna spremenljivka ki sporoca stanje predvajanja
+
 
 function vinyl() {
     const disc = document.querySelector(".disc")     // najde disc element
@@ -18,12 +20,14 @@ function vinyl() {
         if (audio.paused) {   //  ce je audio paused in zacnemo animacijo in glasbo  cene obratno
             audio.play()
             animation.play()
-            disc.classList.add("spinning")    // doda class ce se pesem predvaja
+            IS_PLAYING = true
+
         }
         else {
             audio.pause()
             animation.pause()
-            disc.classList.remove("spinning")    // ce se pesem ustavi se class izbrise
+            IS_PLAYING = false
+
         }
 
     })

@@ -5,7 +5,7 @@ function setlist() {
     for (let song of songs) {                                // loop cez songs
         song.addEventListener("click", function () {
             const active = document.querySelector(".active") // element z classom active (pesem)
-            const disc = document.querySelector(".disc")     // najde disc element
+
 
             active.classList.remove("active")                // udstrani class active aktivni pesmi 
             song.classList.add("active")                   // doda class active izbrani pesmi 
@@ -13,7 +13,7 @@ function setlist() {
             const songpath = song.dataset.song         // najde informacijo o lokaciji audio datoteke zapisano v HTML elementu 
             audio.src = songpath                      // doloci katero datoteko predvaja audio element 
 
-            if (disc.classList.contains('spinning')) {   // predvaja datoteko samo ce se disk vrti 
+            if (IS_PLAYING) {   // predvaja datoteko samo ce se disk vrti 
                 audio.play()
             }
 
